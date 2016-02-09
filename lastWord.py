@@ -10,4 +10,4 @@ def lastword(str):
         if s==1 and x==' ':
             return count
     return count
-print(lastword("hello word "))
+print(lastword("    "))
