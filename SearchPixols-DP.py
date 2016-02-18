@@ -19,7 +19,7 @@ def look_around(s,x,y):
             if getpixol(s,x,y+1)==1:r+=4
             if getpixol(s,x,y-1)==1:r+=8
         except:
-            print r
+            # print r
             return r
     return r
 
@@ -40,18 +40,16 @@ def search(s,x,y):
     finish=[]
     while task:
         t=task[0]
-
-
-        print t
+        # print t
         task=addtask(task,t[0],t[1],look_around(s,t[0],t[1]),finish)
         task.remove(t)
         finish.append(t)
     #
-    print finish
+    # print finish
     findBoundary(finish,lx,rx,ly,hy)
 
 def addtask(task,x,y,n,finish):
-    print x,y,n
+    # print x,y,n
     if n<1:
         return task
     else:
@@ -68,7 +66,7 @@ def addtask(task,x,y,n,finish):
 
 
             n=n/2
-    print task
+    # print task
     return task
 
 def findBoundary(pixols,lx,rx,ly,hy):
@@ -81,7 +79,7 @@ def findBoundary(pixols,lx,rx,ly,hy):
             hy=i[1]
         elif i[1]<ly:
             ly=i[1]
-    print [lx,rx],[ly,hy]
+    print 'Min Boundary:\n\tX:{0},Y:{1}'.format([lx,rx],[ly,hy])
 
 
 
